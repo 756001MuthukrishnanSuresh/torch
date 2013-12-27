@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/torch.iml" filepath="$PROJECT_DIR$/torch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/torch/torch-torch.iml" filepath="$PROJECT_DIR$/torch/torch-torch.iml" />
+    </modules>
+  </component>
+</project>
+
