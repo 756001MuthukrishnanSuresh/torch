@@ -1,9 +1,10 @@
 package com.droid.torch;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,8 +15,6 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
-import android.view.WindowManager;
 import android.widget.ImageView;
 
 import java.io.IOException;
@@ -53,6 +52,10 @@ public class MainActivity extends ActionBarActivity  {
 
             switchBoard(null);
         }
+        
+        if(!FlashAvailable()){
+            FlashDlg();
+        }
 
         callback = new SurfaceHolder.Callback() {
             @Override
@@ -75,6 +78,33 @@ public class MainActivity extends ActionBarActivity  {
         surfaceHolder = surfaceView.getHolder();
         surfaceHolder.addCallback(callback);
         switch_torch = (ImageView)findViewById(R.id.switch_btn);
+    }
+
+    public void FlashDlg(){
+        //lookaround
+        DialogInterface.OnClickListener lookaround = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                switch_torch.setEnabled(false);
+            }
+        };
+
+        //exit
+        DialogInterface.OnClickListener exit = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        };
+
+        //missing HW dialog
+        AlertDialog openSettingsDlg = new AlertDialog.Builder(this).
+                setIcon(R.drawable.warning).
+                setTitle(R.string.dlg_title).
+                setMessage(R.string.dlg_message).
+                setPositiveButton(R.string.dlg_lookaround, lookaround).
+                setNegativeButton(R.string.dlg_exit, exit).create();
+        openSettingsDlg.show();
+
     }
 
     @Override
