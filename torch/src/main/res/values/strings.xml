@@ -6,7 +6,7 @@
 
     <!--missing HW flash ::dlg-->
     <string name="dlg_title">Warning</string>
-    <string name="dlg_message">Oops! Seems like your phone doesn't have a hardware flash.</string>
+    <string name="dlg_message">Oops! Seems like your phone doesn\&apos;t have a hardware flash</string>
     <string name="dlg_lookaround">Look around</string>
     <string name="dlg_exit">Exit</string>
 
