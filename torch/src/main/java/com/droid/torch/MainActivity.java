@@ -97,6 +97,7 @@ public class MainActivity extends ActionBarActivity  {
         };
 
         //missing HW dialog
+        // muthu - server commit
         AlertDialog openSettingsDlg = new AlertDialog.Builder(this).
                 setIcon(R.drawable.warning).
                 setTitle(R.string.dlg_title).
