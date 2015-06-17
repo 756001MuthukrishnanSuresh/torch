@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import java.io.IOException;
 
 // muthu - server commit 1
+// muthu - server commit 2
 public class MainActivity extends ActionBarActivity  {
 
     SurfaceView surfaceView;
