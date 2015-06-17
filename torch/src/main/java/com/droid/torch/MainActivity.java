@@ -98,6 +98,7 @@ public class MainActivity extends ActionBarActivity  {
 
         //missing HW dialog
         // muthu - server commit
+        // muthu - server commit 2
         // muthu - local commit
         AlertDialog openSettingsDlg = new AlertDialog.Builder(this).
                 setIcon(R.drawable.warning).
